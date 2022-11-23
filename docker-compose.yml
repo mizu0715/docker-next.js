@@ -1,0 +1,13 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./node/Dockerfile
+    tty: true
+    volumes:
+      - ./src:/app
+    ports:
+      - "3000:3000"
+    # If you want to run `yarn dev` at docker compose startup
+    # command: sh -c "yarn dev"
